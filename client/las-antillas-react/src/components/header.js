@@ -3,8 +3,7 @@ import { NavLink } from "react-router-dom";
 import Profile from "../assets/logo.png";
 import Home from "../assets/home-icon.svg";
 import React from "react";
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
-function Header() {
+import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';function Header() {
   
   return (
     <Nav>
@@ -44,8 +43,9 @@ function Header() {
       </NavMenu>
 
       <SignOut>
-            <AccountCircleIcon />
+            <AccountCircleOutlinedIcon className="user" />
             <DropDown>
+              
               <span>Log in</span><br/>
               <span>Sing Up</span>
             </DropDown>
