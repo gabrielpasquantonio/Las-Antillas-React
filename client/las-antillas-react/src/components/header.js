@@ -3,8 +3,8 @@ import { NavLink } from "react-router-dom";
 import Profile from "../assets/logo.png";
 import Home from "../assets/home-icon.svg";
 import React from "react";
-import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';function Header() {
-  
+import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircleOutlined";
+function Header() {
   return (
     <Nav>
       <NavLink exact to="/">
@@ -18,39 +18,40 @@ import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined'
           <img src={Home} alt="HOME" />
           <span>HOME</span>
         </NavLink>
-        <NavLink exact to="/create" className="favorite">
+        <NavLink exact to="/habanos" className="favorite">
           <a>
             <span>HABANOS</span>
           </a>
         </NavLink>
-        <NavLink exact to="/create" className="favorite">
+        <NavLink exact to="/cigarros" className="favorite">
           <a>
             <span>CIGARROS</span>
           </a>
         </NavLink>
-        <NavLink exact to="/create" className="favorite">
+        <NavLink exact to="/cigarritos" className="favorite">
           <a>
             <span>CIGARRITOS</span>
           </a>
         </NavLink>
-        <NavLink exact to="/create" className="favorite">
+        <NavLink exact to="/tabacos" className="favorite">
           <a>
             <span>TABACOS</span>
           </a>
         </NavLink>
-
-       
       </NavMenu>
 
       <SignOut>
-            <AccountCircleOutlinedIcon className="user" />
-            <DropDown>
-              
-              <span>Log in</span><br/>
-              <span>Sing Up</span>
-            </DropDown>
-            
-          </SignOut>
+        <AccountCircleOutlinedIcon className="user" />
+        <DropDown>
+          <NavLink exact to="/login">
+            <span>Log in</span>
+          </NavLink>
+          <br />
+          <NavLink exact to="/signup">
+          <span>Sing Up</span>
+          </NavLink>
+        </DropDown>
+      </SignOut>
     </Nav>
   );
 }
@@ -81,7 +82,6 @@ const Logo = styled.a`
     display: block;
     width: 100%;
     max-height: 70px;
-
   }
 `;
 const UserImg = styled.img`
@@ -150,7 +150,7 @@ const NavMenu = styled.div`
       }
     }
   }
- 
+
   .favorite {
     @media (max-width: 768px) {
       justify-content: space-between;

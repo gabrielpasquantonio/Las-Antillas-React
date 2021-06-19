@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { NavLink } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -21,30 +22,79 @@ const ImgSlider = (props) => {
     <Carousel {...settings}>
       <Wrap>
         <a>
-          <img src={Banner1} alt="" />
+        <H2 >Tabaqueria Las Antillas</H2>
+                <H4> Clase y Estilo</H4>
+                <H5>Toda la diversidad y sofisticación del mundo del tabaco en un solo
+                    lugar</H5>
+                    <NavLink exact to="/allProducts"><Button type="button " class="btn btn-dark btn-lg btn-block ">Ver todos los productos</Button></NavLink>
+           <img src={Banner1} alt="" />
         </a>
       </Wrap>
 
       <Wrap>
         <a>
+        <H2 >Tabaqueria Las Antillas</H2>
+                <H4> Clase y Estilo</H4>
+                <H5>Toda la diversidad y sofisticación del mundo del tabaco en un solo
+                    lugar</H5>
+                    <NavLink exact to="/allProducts"><Button type="button " class="btn btn-dark btn-lg btn-block ">Ver todos los productos</Button></NavLink>
         <img src={Banner2} alt="" />
         </a>
       </Wrap>
 
       <Wrap>
         <a>
+        <H2 >Tabaqueria Las Antillas</H2>
+                <H4> Clase y Estilo</H4>
+                <H5>Toda la diversidad y sofisticación del mundo del tabaco en un solo
+                    lugar</H5>
+                    <NavLink exact to="/allProducts"><Button type="button " class="btn btn-dark btn-lg btn-block ">Ver todos los productos</Button></NavLink>
         <img src={Banner3} alt="" />
         </a>
       </Wrap>
 
       <Wrap>
         <a>
+        <H2 >Tabaqueria Las Antillas</H2>
+                <H4> Clase y Estilo</H4>
+                <H5>Toda la diversidad y sofisticación del mundo del tabaco en un solo
+                    lugar</H5>
+                    <NavLink exact to="/allProducts"><Button type="button " class="btn btn-dark btn-lg btn-block ">Ver todos los productos</Button></NavLink>
         <img src={Banner4} alt="" />
         </a>
       </Wrap>
     </Carousel>
   );
 };
+
+const Button = styled.button`
+position: absolute;
+margin-top:11%;
+margin-left: 10%;
+color:rgb(249,249,249);
+background-color: #090b13;
+
+`;
+
+const H5 = styled.h5`
+position: absolute;
+margin-top:9%;
+margin-left: 10%;
+color:rgb(249,249,249)
+`;
+const H4 = styled.h4`
+position: absolute;
+margin-top:7%;
+margin-left: 10%;
+color:rgb(249,249,249)
+`;
+const H2 = styled.h2`
+position: absolute;
+margin-top:5%;
+margin-left: 10%;
+color:rgb(249,249,249)
+`;
+
 
 const Carousel = styled(Slider)`
   & > button {
@@ -75,12 +125,15 @@ const Carousel = styled(Slider)`
   .slick-next {
     right: -75px;
   }
+  
 `;
 
 const Wrap = styled.div`
   border-radius: 4px;
   cursor: pointer;
   position: relative;
+  
+
   a {
     border-radius: 4px;
     box-shadow: rgb(0 0 0 / 69%) 0px 26px 30px -10px,
@@ -89,6 +142,8 @@ const Wrap = styled.div`
     display: block;
     position: relative;
     padding: 4px;
+    padding-top:1px;
+   
     img {
       width: 100%;
       height: 100%;
@@ -101,5 +156,6 @@ const Wrap = styled.div`
     }
   }
 `;
+
 
 export default ImgSlider;
