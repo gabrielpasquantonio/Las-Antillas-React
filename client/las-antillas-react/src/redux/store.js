@@ -1,13 +1,24 @@
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import {
-    SET_DISCOUT_PRODUCTS
+    SET_DISCOUT_PRODUCTS,
+    SET_ALL_PRODUCTS,
+    SET_HABANOS,
+    SET_CIGARROS,
+    SET_CIGARRITOS,
+    SET_PIPAS,
+    SET_ARMAR
   } from "./actionsNames";
 
 
   const initialState = {
     discountProducts: undefined,
-    
+    allProducts: undefined,
+    habanos:undefined,
+    cigarros:undefined,
+    cigarritos:undefined,
+    pipas:undefined,
+    armar:undefined
   };
 
 
@@ -18,8 +29,24 @@ import {
         return { ...state, discountProducts: action.payload };
       }
    
-    
-    
+      case SET_ALL_PRODUCTS: {
+        return { ...state, allProducts: action.payload };
+      }
+      case SET_HABANOS: {
+        return { ...state, habanos: action.payload };
+      }
+      case SET_CIGARROS: {
+        return { ...state, cigarros: action.payload };
+      }
+      case SET_CIGARRITOS: {
+        return { ...state, cigarritos: action.payload };
+      }
+      case SET_PIPAS: {
+        return { ...state, pipas: action.payload };
+      }
+      case SET_ARMAR: {
+        return { ...state, armar: action.payload };
+      }
         default: {
   
         return state;

@@ -1,1 +1,7 @@
 export const SET_DISCOUT_PRODUCTS = "SET_DISCOUT_PRODUCTS";
+export const SET_ALL_PRODUCTS = "SET_ALL_PRODUCTS";
+export const SET_HABANOS = "SET_HABANOS";
+export const SET_CIGARROS = "SET_CIGARROS";
+export const SET_CIGARRITOS = "SET_CIGARRITOS";
+export const SET_PIPAS = "SET_PIPAS";
+export const SET_ARMAR = "SET_ARMAR"

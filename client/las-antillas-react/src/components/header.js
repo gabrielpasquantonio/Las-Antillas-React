@@ -28,16 +28,27 @@ function Header() {
             <span>CIGARROS</span>
           </a>
         </NavLink>
+
         <NavLink exact to="/cigarritos" className="favorite">
           <a>
             <span>CIGARRITOS</span>
           </a>
         </NavLink>
-        <NavLink exact to="/tabacos" className="favorite">
-          <a>
-            <span>TABACOS</span>
-          </a>
-        </NavLink>
+        <SignOut>
+          <span>TABACOS</span>
+          <DropDown>
+            <NavLink exact to="/tabacosPipa" className="favorite">
+              <a>
+                <span>Tabacos Para Pipa</span>
+              </a>
+            </NavLink>
+            <NavLink exact to="/tabacosArmar" className="favorite">
+              <a>
+                <span>Tabacos Para Armar</span>
+              </a>
+            </NavLink>
+          </DropDown>
+        </SignOut>
       </NavMenu>
 
       <SignOut>
@@ -48,7 +59,7 @@ function Header() {
           </NavLink>
           <br />
           <NavLink exact to="/signup">
-          <span>Sing Up</span>
+            <span>Sing Up</span>
           </NavLink>
         </DropDown>
       </SignOut>
