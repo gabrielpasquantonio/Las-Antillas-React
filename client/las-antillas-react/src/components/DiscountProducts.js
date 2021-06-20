@@ -1,5 +1,5 @@
 import React,{useEffect} from "react";
-import styled from "styled-components";
+
 import { useSelector,useDispatch  } from "react-redux";
 import { getDiscountProducts } from "../redux/action";
 import Cards from './Cards'

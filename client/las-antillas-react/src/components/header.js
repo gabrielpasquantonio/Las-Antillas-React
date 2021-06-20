@@ -41,7 +41,7 @@ function Header() {
       </NavMenu>
 
       <SignOut>
-        <AccountCircleOutlinedIcon className="user" />
+        <AccountCircleOutlinedIcon style={{ fontSize: 50 }} className="user" />
         <DropDown>
           <NavLink exact to="/login">
             <span>Log in</span>

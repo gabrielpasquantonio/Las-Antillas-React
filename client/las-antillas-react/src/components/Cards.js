@@ -9,7 +9,7 @@ function Cards(props) {
   console.log(discountProducts);
   return (
     <>
-      <h2>ON SALE!</h2>
+      <H2>ON SALE!</H2>
       <Content>
         {discountProducts && discountProducts.productoConDescuento ? (
           discountProducts.productoConDescuento.map((product) => (
@@ -65,6 +65,10 @@ function Cards(props) {
     </>
   );
 }
+
+const H2 = styled.h2`
+margin-top: 52px;
+`;
 
 const Img = styled.img`
   left: 310px !important;
