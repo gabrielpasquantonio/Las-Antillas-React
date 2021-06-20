@@ -1,10 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
 import ImgSlider from "../components/ImgSlider";
+import DiscountProducts from '../components/DiscountProducts';
+
 function Home() {
     return (
         <Container>
              <ImgSlider/>
+             <DiscountProducts/>
         </Container>
     )
 }
