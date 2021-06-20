@@ -100,6 +100,6 @@ module.exports = {
     },
     mantenimiento: (req, res) => {
       return res.send(
-       "sorry")
+       "sorry site under revision")
     }
 }
