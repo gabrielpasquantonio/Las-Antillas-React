@@ -355,6 +355,7 @@ module.exports = {
 
   productDetailHabano: (req, res) => {
     //res.sendFile(path.resolve(__dirname, "..", "views", "web", "index.html"));
+   
     products
       .findByPk(req.query.productId, {
         include: [
@@ -383,40 +384,23 @@ module.exports = {
           (atribute) => atribute.name === "Length"
         ).atributeProduct.value;
         const image = productoEncontrado.image;
-
+        const brand = productoEncontrado.brand_id;
+        const category=productoEncontrado.category_id
         const productoHabano = {
           id: productoEncontrado.id,
-          precio: {
-            value: price,
-          },
-
-          cepo: {
-            value: ring,
-          },
-
-          nombre: {
-            value: name,
-          },
-
-          sabor: {
-            value: taste,
-          },
-          largo: {
-            value: length,
-          },
-
+          price:  price,
+          cepo: ring,
+          name:name,
+          taste:taste,
+          length:length,
           image: image,
+          brand:brand,
+          category:category
         };
 
-        res.render(
-          path.resolve(
-            __dirname,
-            "..",
-            "views",
-            "productos",
-            "productDetailHabano.ejs"
-          ),
-          { productoHabano }
+        res.send(
+         
+          productoHabano
         );
       });
   },
@@ -453,43 +437,23 @@ module.exports = {
           (atribute) => atribute.name === "Origin"
         ).atributeProduct.value;
         const image = productoEncontrado2.image;
-
+        const brand = productoEncontrado2.brand_id;
+        const category=productoEncontrado2.category_id
         const productoCigarros = {
           id: productoEncontrado2.id,
-          precio: {
-            value: price,
-          },
-
-          cepo: {
-            value: ring,
-          },
-
-          nombre: {
-            value: name,
-          },
-
-          sabor: {
-            value: taste,
-          },
-          largo: {
-            value: length,
-          },
-          origen: {
-            value: origin,
-          },
-
+          price: price,
+          cepo:ring,
+          name: name, 
+          taste:taste,
+          length:length,
+          origen: origin,
           image: image,
+          brand:brand,
+          category:category
         };
 
-        res.render(
-          path.resolve(
-            __dirname,
-            "..",
-            "views",
-            "productos",
-            "productDetailCigarro.ejs"
-          ),
-          { productoCigarros }
+        res.send(
+          productoCigarros
         );
       });
   },
@@ -527,43 +491,23 @@ module.exports = {
           (atribute) => atribute.name === "Origin"
         ).atributeProduct.value;
         const image = productoEncontrado3.image;
-
+        const brand = productoEncontrado3.brand_id;
+        const category=productoEncontrado3.category_id
         const productoCigarritos = {
           id: productoEncontrado3.id,
-          precio: {
-            value: price,
-          },
-
-          cepo: {
-            value: ring,
-          },
-
-          nombre: {
-            value: name,
-          },
-
-          sabor: {
-            value: taste,
-          },
-          largo: {
-            value: length,
-          },
-          origen: {
-            value: origin,
-          },
-
+          price: price,
+          cepo:ring,
+          name: name, 
+          taste:taste,
+          length:length,
+          origen: origin,
           image: image,
+          brand:brand,
+          category:category
         };
 
-        res.render(
-          path.resolve(
-            __dirname,
-            "..",
-            "views",
-            "productos",
-            "productDetailCigarrito.ejs"
-          ),
-          { productoCigarritos }
+        res.send(
+        productoCigarritos 
         );
       });
   },
@@ -601,43 +545,23 @@ module.exports = {
           (atribute) => atribute.name === "Description"
         ).atributeProduct.value;
         const image = productoEncontrado4.image;
-
+        const brand = productoEncontrado4.brand_id;
+        const category=productoEncontrado4.category_id
         const productoTabacoParaPipa = {
           id: productoEncontrado4.id,
-          precio: {
-            value: price,
-          },
-
-          cantidad: {
-            value: quantity,
-          },
-
-          nombre: {
-            value: name,
-          },
-
-          sabor: {
-            value: taste,
-          },
-          descripcion: {
-            value: description,
-          },
-          origen: {
-            value: origin,
-          },
-
-          imagen: image,
+          price:price,
+          quantity:quantity,
+          name:name,
+          taste:taste,
+          description:description,
+          origen:origin,
+          image:image,
+          brand:brand,
+          category:category
         };
 
-        res.render(
-          path.resolve(
-            __dirname,
-            "..",
-            "views",
-            "productos",
-            "productDetailTabacoParaPipa.ejs"
-          ),
-          { productoTabacoParaPipa }
+        res.send(
+          productoTabacoParaPipa
         );
       });
   },
@@ -678,43 +602,23 @@ module.exports = {
           (atribute) => atribute.name === "Quantity"
         ).atributeProduct.value;
         const image = productoEncontrado5.image;
-
+        const brand = productoEncontrado5.brand_id;
+        const category=productoEncontrado5.category_id
         const productoTabacoParaArmar = {
           id: productoEncontrado5.id,
-          precio: {
-            value: price,
-          },
-
-          cantidad: {
-            value: quantity,
-          },
-
-          nombre: {
-            value: name,
-          },
-
-          sabor: {
-            value: taste,
-          },
-          descripcion: {
-            value: description,
-          },
-          origen: {
-            value: origin,
-          },
-
-          imagen: image,
+          price:price,
+          quantity:quantity,
+          name:name,
+          taste:taste,
+          description:description,
+          origen:origin,
+          image:image,
+          brand:brand,
+          category:category
         };
 
-        res.render(
-          path.resolve(
-            __dirname,
-            "..",
-            "views",
-            "productos",
-            "productDetailTabacoParaArmar.ejs"
-          ),
-          { productoTabacoParaArmar }
+        res.send(
+          productoTabacoParaArmar
         );
       });
   },

@@ -86,7 +86,7 @@ function AllCards(props) {
       { allProducts !== undefined ? (
         <>
 
-        <H2>{category(allProducts[0].category)} Products</H2>
+        <H2>{category(allProducts[0].category)} </H2>
       <Content>
         
         
