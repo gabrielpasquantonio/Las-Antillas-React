@@ -43,7 +43,7 @@ const Container = styled.div`
   align-items: center;
   flex: 1;
   align-items: stretch;
-  margin-top: 100px;
+  margin-top: 30px;
   padding: 5px;
    margin-bottom: 5px;
   @media (max-width: 768px) {

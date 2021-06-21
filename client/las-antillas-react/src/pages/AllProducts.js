@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { getAllProducts } from "../redux/action";
 import AllCardsProducts from "../components/AllCardsProducts";
 import SearchBar from "../components/SearchBar";
+import Filter from "../components/Filter";
 
 function AllProducts() {
   const products = useSelector((state) => state.allProducts);
@@ -44,10 +45,11 @@ function AllProducts() {
   
   return (
     <div>
+      <Filter/>
       <SearchBar onSearch={onSearch} />
       {notFound ? (
         <Div className="not-found-text">
-          <H1>Sorry, Country not found! </H1>
+          <H1>Sorry, Product not found! </H1>
         </Div>
       ) : (
         <>

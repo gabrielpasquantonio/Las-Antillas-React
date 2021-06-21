@@ -8,7 +8,8 @@ import {
     SET_CIGARRITOS,
     SET_PIPAS,
     SET_ARMAR,
-    SET_PRODUCT_ID
+    SET_PRODUCT_ID,
+    ORDER_PRODUCT
   } from "./actionsNames";
 
 export function getDiscountProducts() {
@@ -137,5 +138,64 @@ export function getArmar() {
         
         dispatch({ type: SET_ARMAR, payload: response.data });
       });
+  };
+}
+
+
+export async function order(data, option) {
+  let sortedData;
+  if (option.name) {
+   
+   
+   
+    sortedData = data.sort((a, b) => {
+      if (option.name === "Descendent") {
+        // https://developer.mozilla.org/es/search?q=sort
+        if (a.name < b.name) {
+          return 1;
+        }
+        if (a.name > b.name) {
+          return -1;
+        }
+      } else {
+        if (a.name > b.name) {
+          return 1;
+        }
+        if (a.name < b.name) {
+          return -1;
+        }
+      }
+      
+      return 0;
+    }); 
+  }
+  if (option.price) {
+    const dataOrdenadaClear = data.filter((item) => item.price && item, )
+    sortedData = dataOrdenadaClear.sort((a, b) => {
+      
+      console.log(option)
+      
+      if (option.price === "Descendent") {
+       
+        return a.price - b.price;
+      }
+      // ordeno la data que me trae con un sort por primera letra del name
+      if (option.price === "Ascendent") {
+       
+        return b.price - a.price;
+      }
+    }); // funcion que ordena
+  }
+  
+  return sortedData;
+ 
+}
+
+export function orderedData(data, option) {
+  return async function (dispatch) {
+    order(data, option).then((data) =>
+      dispatch({ type: ORDER_PRODUCT, payload: data })
+    );
+  
   };
 }

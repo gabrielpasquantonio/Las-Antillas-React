@@ -9,6 +9,7 @@ import {
   SET_PIPAS,
   SET_ARMAR,
   SET_PRODUCT_ID,
+  ORDER_PRODUCT
 } from "./actionsNames";
 
 const initialState = {
@@ -48,6 +49,9 @@ function reducer(state = initialState, action) {
     }
     case SET_PRODUCT_ID: {
       return { ...state, productId: action.payload };
+    }
+    case ORDER_PRODUCT: {
+      return { ...state, allProducts: action.payload };
     }
     default: {
       return state;
