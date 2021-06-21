@@ -11,7 +11,7 @@ import LocalShippingIcon from "@material-ui/icons/LocalShipping";
 import StorefrontIcon from "@material-ui/icons/Storefront";
 function ProductDetail() {
   let data = useLocation();
-  console.log(data.state.category);
+  
   const dispatch = useDispatch();
   const productDetail = useSelector((state) => state.productId);
   const { id } = useParams();
@@ -20,12 +20,12 @@ function ProductDetail() {
     dispatch(getProduct(id, category));
   }, []);
 
-  console.log(productDetail);
 
 
 
 
-  
+
+
   if (productDetail === null) {
     return <Div>Product not found</Div>;
   } else if (productDetail === undefined) {

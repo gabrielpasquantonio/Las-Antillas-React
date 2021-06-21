@@ -8,7 +8,7 @@ import styled from "styled-components";
 import { useDispatch, connect } from "react-redux";
 function Cantidad(props) {
   const initialValues = {
-    cantidad: 0,
+    cantidad: 1,
   };
   const dispatch = useDispatch();
   const validate = Yup.object({
@@ -22,7 +22,7 @@ function Cantidad(props) {
       dispatch={dispatch}
       onSubmit={async (values, { resetForm }) => {
         await new Promise((r) => setTimeout(r, 500));
-        console.log("added")
+       
         //await dispatch(createActivity(values));
         resetForm();
       }}

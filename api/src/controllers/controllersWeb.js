@@ -79,6 +79,7 @@ module.exports = {
                       imagen: imagen,
                       id: productId2,
                       categoria: productoEncontradoConDescuento.Category.name,
+                      category:productoEncontradoConDescuento.Category.id,
                       marca: productoEncontradoConDescuento.Brand.name,
                     }
                   );

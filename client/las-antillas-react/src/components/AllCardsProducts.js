@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 
 function AllCardsProdcuts(props) {
   const { allProducts, loading, data } = props;
-  console.log(data);
 
   function brand(action) {
     switch (action) {

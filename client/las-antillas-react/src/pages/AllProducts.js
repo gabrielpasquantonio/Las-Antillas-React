@@ -17,13 +17,12 @@ function AllProducts() {
 
   const searchProduct = async (products, product) => {
     const found = products.find((el) => el.name === product);
-    console.log(found);
     return found;
   };
 
   const onSearch = async (product) => {
     //setLoading(true)
-    console.log("this is the data " + product);
+   
     if (!product) {
       setNotFound(false);
       setData(null);
@@ -31,7 +30,7 @@ function AllProducts() {
     }
     setLoading(true);
     const result = await searchProduct(products, product);
-    console.log(result);
+    
     if (!result) {
       setNotFound(true);
       setLoading(false);
@@ -42,7 +41,7 @@ function AllProducts() {
     }
     setLoading(false);
   };
-  console.log(data);
+  
   return (
     <div>
       <SearchBar onSearch={onSearch} />

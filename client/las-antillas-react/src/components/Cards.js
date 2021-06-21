@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function Cards(props) {
   const { discountProducts } = props;
 
-  console.log(typeof products);
+  
   console.log(discountProducts);
   return (
     <>
@@ -13,9 +13,15 @@ function Cards(props) {
       <Content>
         {discountProducts && discountProducts.productoConDescuento ? (
           discountProducts.productoConDescuento.map((product) => (
+            
             <Card>
               <Wrap key={product.id}>
-                <Link to={`/home`}>
+              <Link
+                    to={{
+                      pathname: `/products/${product.id}`,
+                      state: { category: product.category },
+                    }}
+                  >
                   <img
                     src={`../images/${product.categoria.toLowerCase()}/${
                       product.imagen

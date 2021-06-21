@@ -24,7 +24,7 @@ function Envio() {
       dispatch={dispatch}
       onSubmit={async (values, { resetForm }) => {
         await new Promise((r) => setTimeout(r, 500));
-        console.log("added")
+       
         //await dispatch(createActivity(values));
         resetForm();
       }}
