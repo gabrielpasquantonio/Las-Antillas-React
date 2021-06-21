@@ -9,11 +9,18 @@ import Cigarros from "./pages/Cigarros";
 import Cigarritos from "./pages/Cigarritos";
 import TabacosPipa from "./pages/TabacosPipa";
 import TabacosArmar from "./pages/TabacosArmar";
+import Product from "./pages/Product";
+
+
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
+        <Route path="/products/:id"  >
+          <Header />
+            <Product/>
+          </Route>
         <Route path="/tabacosArmar">
           <Header />
             <TabacosArmar/>

@@ -372,7 +372,7 @@ module.exports = {
           (atribute) => atribute.name === "VitolaDeGalera"
         ).atributeProduct.value;
         const price = productoEncontrado.Atributes.find(
-          (atribute) => atribute.name === "UnitPrice"
+          (atribute) => atribute.name === "UnitPrice" 
         ).atributeProduct.value;
         const ring = productoEncontrado.Atributes.find(
           (atribute) => atribute.name === "Ring"

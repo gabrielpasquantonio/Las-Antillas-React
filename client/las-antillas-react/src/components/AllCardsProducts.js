@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 function AllCardsProdcuts(props) {
-  const { allProducts } = props;
+  const { allProducts, loading, data } = props;
+  console.log(data);
 
-
- function brand(action) {
+  function brand(action) {
     switch (action) {
       case 1: {
         return "Cohiba";
@@ -83,55 +83,106 @@ function AllCardsProdcuts(props) {
     }
   }
   return (
-   <>
-      { allProducts !== undefined ? (
+    <div>
+      {data ? (
         <>
+          <Content>
+            {data ? (
+              <Card>
+                <Wrap key={data.id}>
+                  <Link
+                    to={{
+                      pathname: `/products/${data.id}`,
+                      state: { category: data.category },
+                    }}
+                  >
+                    <img
+                      src={`../images/allImages/${data.image.toLowerCase()}`}
+                      alt={data.name}
+                    />
+                  </Link>
+                </Wrap>
 
-        <H2>All Products</H2>
-      <Content>
-        
-        
-         
-          {allProducts.map((product) => (
-            <Card>
-              <Wrap key={product.id}>
-                <Link to={`/home`}>
-                  <img
-                    src={`../images/allImages/${product.image.toLowerCase()}`}
-                    alt={product.name}
-                  />
-                </Link>
-              </Wrap>
+                <Bottom>
+                  <Div>
+                    <SubDiv>
+                      <div>
+                        <H4>Categoria: {category(data.category)} </H4>
+                      </div>
+                      <div>
+                        <H4> Marca: {brand(data.brand)}</H4>
+                      </div>
+                    </SubDiv>
+                  </Div>
+                  <Div>
+                    <SubDiv>
+                      <div>
+                        <H4> Name: {data.name}</H4>
+                      </div>
+                      <div>
+                        <H4>Price: ${data.price}</H4>
+                      </div>
+                    </SubDiv>
+                  </Div>
+                </Bottom>
+              </Card>
+            ) : (
+              <H1>Loading...</H1>
+            )}
+          </Content>
+        </>
+      ) : (
+        <><H2>All Products</H2>
+          <Content>
+            
+            {allProducts !== undefined ? (
+              allProducts.map((product) => (
+                <Card>
+                  <Wrap key={product.id}>
+                    <Link
+                      to={{
+                        pathname: `/products/${product.id}`,
+                        state: { category: product.category },
+                      }}
+                    >
+                      <img
+                        src={`../images/allImages/${product.image.toLowerCase()}`}
+                        alt={product.name}
+                      />
+                    </Link>
+                  </Wrap>
 
-              <Bottom>
-                <Div>
-                  <SubDiv>
-                    <div>
-                      <H4>Categoria: {category(product.category)} </H4>
-                    </div>
-                    <div>
-                      <H4> Marca: {brand(product.brand)}</H4>
-                    </div>
-                  </SubDiv>
-                </Div>
-                <Div>
-                  <SubDiv>
-                    <div>
-                      <H4> Name: {product.name}</H4>
-                    </div>
-                    <div>
-                      <H4>Price: ${product.price}</H4>
-                    </div>
-                  </SubDiv>
-                </Div>
-              </Bottom>
-            </Card>
-          ))}  </Content></>
-        ) : (<>
-          <H1>Loading...</H1></>
-        )}
-    
-  </>
+                  <Bottom>
+                    <Div>
+                      <SubDiv>
+                        <div>
+                          <H4>Categoria: {category(product.category)} </H4>
+                        </div>
+                        <div>
+                          <H4> Marca: {brand(product.brand)}</H4>
+                        </div>
+                      </SubDiv>
+                    </Div>
+                    <Div>
+                      <SubDiv>
+                        <div>
+                          <H4> Name: {product.name}</H4>
+                        </div>
+                        <div>
+                          <H4>Price: ${product.price}</H4>
+                        </div>
+                      </SubDiv>
+                    </Div>
+                  </Bottom>
+                </Card>
+              ))
+            ) : (
+              <H1>Loading...</H1>
+            )}
+          </Content>
+        </>
+      )}
+    </div>
   );
 }
 

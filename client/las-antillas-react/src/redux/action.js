@@ -7,7 +7,8 @@ import {
     SET_CIGARROS,
     SET_CIGARRITOS,
     SET_PIPAS,
-    SET_ARMAR
+    SET_ARMAR,
+    SET_PRODUCT_ID
   } from "./actionsNames";
 
 export function getDiscountProducts() {
@@ -21,7 +22,62 @@ export function getDiscountProducts() {
     };
   }
 
-  
+  export function getProduct(id,category) {
+   console.log(category)
+   if(category==1){
+    return (dispatch) => {
+      axios
+        .get(`http://localhost:4000/productDetailHabano?productId=${id}`)
+        .then((response) => {
+          
+          dispatch({ type: SET_PRODUCT_ID, payload: response.data });
+        });
+    }}
+
+    if(category==2){
+      return (dispatch) => {
+        axios
+          .get(`http://localhost:4000/productDetailCigarro?productId=${id}`)
+          .then((response) => {
+            
+            dispatch({ type: SET_PRODUCT_ID, payload: response.data });
+          });
+      }}
+      if(category==3){
+        return (dispatch) => {
+          axios
+            .get(`http://localhost:4000/productDetailCigarrito?productId=${id}`)
+            .then((response) => {
+              
+              dispatch({ type: SET_PRODUCT_ID, payload: response.data });
+            });
+        }}
+        if(category==4){
+          return (dispatch) => {
+            axios
+              .get(`http://localhost:4000/productDetailTabacoParaPipa?productId=${id}`)
+              .then((response) => {
+                
+                dispatch({ type: SET_PRODUCT_ID, payload: response.data });
+              });
+          }}
+          if(category==5){
+            return (dispatch) => {
+              axios
+                .get(`http://localhost:4000/productDetailTabacoParaArmar?productId=${id}`)
+                .then((response) => {
+                  
+                  dispatch({ type: SET_PRODUCT_ID, payload: response.data });
+                });
+            }}
+
+  }
+  export function clearUser() {
+    return {
+      type: SET_PRODUCT_ID,
+      payload: undefined,
+    };
+  }
 export function getAllProducts() {
   return (dispatch) => {
     axios

@@ -94,7 +94,8 @@ function AllCards(props) {
           {allProducts.map((product) => (
             <Card>
               <Wrap key={product.id}>
-                <Link to={`/home`}>
+                <Link to={{ pathname: `/products/${product.id}`,  state:{category:product.category} }}>
+               
                   <img
                     src={`../images/allImages/${product.image.toLowerCase()}`}
                     alt={product.name}
